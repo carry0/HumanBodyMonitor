@@ -13,7 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.school.humanbodymonitor.R;
-import com.school.humanbodymonitor.model.home.adapter.DiagnoseDoctorAdapter;
+import com.school.humanbodymonitor.model.home.adapter.*;
 
 import java.util.ArrayList;
 import java.util.List;
