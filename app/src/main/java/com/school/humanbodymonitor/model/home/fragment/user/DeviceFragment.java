@@ -15,12 +15,13 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
 import com.school.humanbodymonitor.R;
-import com.school.humanbodymonitor.model.home.fragment.adapter.DeviceAdapter;
+import com.school.humanbodymonitor.model.home.adapter.DeviceAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link DeviceFragment#newInstance} factory method to
  * create an instance of this fragment.
+ * 设备管理
  */
 public class DeviceFragment extends Fragment {
 

@@ -1,4 +1,4 @@
-package com.school.humanbodymonitor.model.home.fragment.adapter;
+package com.school.humanbodymonitor.model.home.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;

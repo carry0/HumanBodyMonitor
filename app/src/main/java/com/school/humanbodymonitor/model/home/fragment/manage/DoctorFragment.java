@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.school.humanbodymonitor.R;
-import com.school.humanbodymonitor.model.home.fragment.adapter.DoctorManageAdapter;
+import com.school.humanbodymonitor.model.home.adapter.DoctorManageAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -13,7 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.school.humanbodymonitor.R;
-import com.school.humanbodymonitor.model.home.fragment.adapter.DiagnoseDoctorAdapter;
+import com.school.humanbodymonitor.model.home.adapter.DiagnoseDoctorAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +22,7 @@ import java.util.List;
  * A simple {@link Fragment} subclass.
  * Use the {@link CaseFragment#newInstance} factory method to
  * create an instance of this fragment.
- * 医生端
+ * 病例列表
  */
 public class CaseFragment extends Fragment {
 

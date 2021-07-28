@@ -5,16 +5,22 @@ import android.text.TextUtils;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.widget.Toolbar;
+
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.checkbox.MaterialCheckBox;
 import com.school.humanbodymonitor.R;
 import com.school.humanbodymonitor.common.BaseActivity;
 
+/**
+ * 编辑个人信息
+ */
 public class UpdateDataActivity extends BaseActivity {
 
     private MaterialButton butSave;
     private EditText etUserName,etIdentityCard,etPhoneNo,etAge,etPassword,etConfirmPassword;
     private MaterialCheckBox sex1,sex2;
+    private Toolbar tbMain;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +30,7 @@ public class UpdateDataActivity extends BaseActivity {
     }
 
     private void initView() {
+        tbMain = findViewById(R.id.tbMain);
         butSave = findViewById(R.id.but_save);
         etUserName = findViewById(R.id.et_user_name);
         etIdentityCard = findViewById(R.id.et_identity_card);
@@ -37,6 +44,7 @@ public class UpdateDataActivity extends BaseActivity {
 
     private void initListener() {
         butSave.setOnClickListener(v ->save());
+        tbMain.setNavigationOnClickListener(v -> onBackPressed());
         sex1.setOnClickListener(v -> {
             if (sex1.isChecked()){
                 sex2.setChecked(false);

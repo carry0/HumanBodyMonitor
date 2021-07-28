@@ -13,7 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.school.humanbodymonitor.R;
-import com.school.humanbodymonitor.model.home.fragment.adapter.HistoryAdapter;
+import com.school.humanbodymonitor.model.home.adapter.HistoryAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +22,7 @@ import java.util.List;
  * A simple {@link Fragment} subclass.
  * Use the {@link HistoryFragment#newInstance} factory method to
  * create an instance of this fragment.
+ * 历史诊断记录
  */
 public class HistoryFragment extends Fragment {
 

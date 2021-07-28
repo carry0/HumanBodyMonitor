@@ -14,6 +14,7 @@ import com.school.humanbodymonitor.R;
  * A simple {@link Fragment} subclass.
  * Use the {@link SaturationFragment#newInstance} factory method to
  * create an instance of this fragment.
+ * 血氧饱和度
  */
 public class SaturationFragment extends Fragment {
 

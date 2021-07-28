@@ -14,6 +14,7 @@ import com.school.humanbodymonitor.R;
  * A simple {@link Fragment} subclass.
  * Use the {@link BreatheMonitorFragment#newInstance} factory method to
  * create an instance of this fragment.
+ * 呼吸生理数据
  */
 public class BreatheMonitorFragment extends Fragment {
 

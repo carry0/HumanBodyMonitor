@@ -1,4 +1,4 @@
-package com.school.humanbodymonitor.model.home.fragment.adapter;
+package com.school.humanbodymonitor.model.home.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,7 +8,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.button.MaterialButton;
 import com.school.humanbodymonitor.R;
 
 import java.util.List;
@@ -17,7 +16,7 @@ import java.util.List;
  * @Author
  * @cerate 2021/7/28 10:52
  **/
-public class DoctorManageAdapter extends RecyclerView.Adapter<DoctorManageAdapter.ViewHolder> {
+public class DiagnoseDoctorAdapter extends RecyclerView.Adapter<DiagnoseDoctorAdapter.ViewHolder> {
 
     private List<String> diagnoseReportList;
 
@@ -28,14 +27,14 @@ public class DoctorManageAdapter extends RecyclerView.Adapter<DoctorManageAdapte
 
     @NonNull
     @Override
-    public DoctorManageAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_doctor_manage, parent, false);
+    public DiagnoseDoctorAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_diagnose_doctor, parent, false);
         return new ViewHolder(inflate);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull DoctorManageAdapter.ViewHolder holder, int position) {
-
+    public void onBindViewHolder(@NonNull DiagnoseDoctorAdapter.ViewHolder holder, int position) {
+        holder.tvUser.setText(diagnoseReportList.get(position));
     }
 
     @Override
@@ -49,13 +48,15 @@ public class DoctorManageAdapter extends RecyclerView.Adapter<DoctorManageAdapte
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView tvName,tvWorkNo;
-        MaterialButton butDetail;
+        TextView tvUser,tvCaseNo,tvPatientAge,tvSex,tvSymptom;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvName = itemView.findViewById(R.id.tv_work_no);
-            tvWorkNo = itemView.findViewById(R.id.tv_name);
-            butDetail = itemView.findViewById(R.id.but_detail);
+            tvUser = itemView.findViewById(R.id.tv_user);
+            tvCaseNo = itemView.findViewById(R.id.tv_case_no);
+            tvPatientAge = itemView.findViewById(R.id.tv_patient_age);
+            tvSex=itemView.findViewById(R.id.tv_sex);
+            tvSymptom =  itemView.findViewById(R.id.tv_symptom);
         }
     }
 
