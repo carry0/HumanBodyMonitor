@@ -15,6 +15,9 @@ import android.view.ViewGroup;
 import com.school.humanbodymonitor.R;
 import com.school.humanbodymonitor.model.home.fragment.adapter.DiagnoseDoctorAdapter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link CaseFragment#newInstance} factory method to
@@ -80,6 +83,10 @@ public class CaseFragment extends Fragment {
     private void initView(View view) {
         listCase = view.findViewById(R.id.list_case);
         listCase.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));
+        adapter =new DiagnoseDoctorAdapter();
         listCase.setAdapter(adapter);
+        List<String> list = new ArrayList<>();
+        list.add("");
+        adapter.setDeviceList(list);
     }
 }

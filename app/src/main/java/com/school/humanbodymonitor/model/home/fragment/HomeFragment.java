@@ -1,6 +1,9 @@
 package com.school.humanbodymonitor.model.home.fragment;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -8,14 +11,12 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 import com.school.humanbodymonitor.R;
 import com.school.humanbodymonitor.model.home.fragment.doctor.*;
+import com.school.humanbodymonitor.model.home.fragment.manage.DataManageFragment;
+import com.school.humanbodymonitor.model.home.fragment.manage.UserManageFragment;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -82,6 +83,7 @@ public class HomeFragment extends Fragment {
         viewPager = view.findViewById(R.id.view_pager);
         tabLayout = view.findViewById(R.id.tab_layout);
 
+        //用户端
 //        FragmentStateAdapter adapter = new FragmentStateAdapter(this) {
 //
 //            @Override
@@ -107,6 +109,7 @@ public class HomeFragment extends Fragment {
 //                return fragment;
 //            }
 //        };
+        //医生端
         FragmentStateAdapter adapter = new FragmentStateAdapter(this) {
 
             @Override
@@ -126,10 +129,29 @@ public class HomeFragment extends Fragment {
                 return fragment;
             }
         };
+
+        //管理端
+//        FragmentStateAdapter adapter = new FragmentStateAdapter(this) {
+//
+//            @Override
+//            public int getItemCount() {
+//                return 2;
+//            }
+//
+//            @NonNull
+//            @Override
+//            public Fragment createFragment(int position) {
+//                Fragment fragment = null;
+//                if (position == 0) {
+//                    fragment = new UserManageFragment();
+//                } else {
+//                    fragment = new DataManageFragment();
+//                }
+//                return fragment;
+//            }
+//        };
         viewPager.setCurrentItem(0, false);
         viewPager.setAdapter(adapter);
-
-
         //用户端
 //        new TabLayoutMediator(tabLayout,viewPager,(tab, position) -> {
 //            switch (position) {
@@ -146,21 +168,21 @@ public class HomeFragment extends Fragment {
 //        }).attach();
 
         //医生端
-//        new TabLayoutMediator(tabLayout,viewPager,(tab, position) -> {
-//            if (position == 0) {
-//                tab.setText("病例列表");
-//            } else {
-//                tab.setText("历史诊断记录");
-//            }
-//        }).attach();
-
-        //管理端
         new TabLayoutMediator(tabLayout,viewPager,(tab, position) -> {
             if (position == 0) {
-                tab.setText("用户管理");
+                tab.setText("病例列表");
             } else {
-                tab.setText("数据管理");
+                tab.setText("历史诊断记录");
             }
         }).attach();
+
+        //管理端
+//        new TabLayoutMediator(tabLayout,viewPager,(tab, position) -> {
+//            if (position == 0) {
+//                tab.setText("用户管理");
+//            } else {
+//                tab.setText("数据管理");
+//            }
+//        }).attach();
     }
 }

@@ -1,14 +1,21 @@
 package com.school.humanbodymonitor.model.home.fragment.manage;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.school.humanbodymonitor.R;
+import com.school.humanbodymonitor.model.home.fragment.adapter.DoctorManageAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +32,8 @@ public class DoctorFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private RecyclerView listDoctorManage;
+    private DoctorManageAdapter adapter;
 
     public DoctorFragment() {
         // Required empty public constructor
@@ -62,5 +71,21 @@ public class DoctorFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_doctor, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        initView(view);
+    }
+
+    private void initView(View view) {
+        listDoctorManage = view.findViewById(R.id.list_doctor_manage);
+        listDoctorManage.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+        adapter = new DoctorManageAdapter();
+        listDoctorManage.setAdapter(adapter);
+        List<String> objects = new ArrayList<>();
+        objects.add("");
+        adapter.setDeviceList(objects);
     }
 }

@@ -8,6 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.button.MaterialButton;
 import com.school.humanbodymonitor.R;
 
 import java.util.List;
@@ -16,7 +17,7 @@ import java.util.List;
  * @Author
  * @cerate 2021/7/28 10:52
  **/
-public class DiagnoseDoctorAdapter extends RecyclerView.Adapter<DiagnoseDoctorAdapter.ViewHolder> {
+public class DoctorManageAdapter extends RecyclerView.Adapter<DoctorManageAdapter.ViewHolder> {
 
     private List<String> diagnoseReportList;
 
@@ -27,14 +28,14 @@ public class DiagnoseDoctorAdapter extends RecyclerView.Adapter<DiagnoseDoctorAd
 
     @NonNull
     @Override
-    public DiagnoseDoctorAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_diagnose_doctor, parent, false);
+    public DoctorManageAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_doctor_manage, parent, false);
         return new ViewHolder(inflate);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull DiagnoseDoctorAdapter.ViewHolder holder, int position) {
-        holder.tvUser.setText(diagnoseReportList.get(position));
+    public void onBindViewHolder(@NonNull DoctorManageAdapter.ViewHolder holder, int position) {
+
     }
 
     @Override
@@ -48,15 +49,13 @@ public class DiagnoseDoctorAdapter extends RecyclerView.Adapter<DiagnoseDoctorAd
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView tvUser,tvCaseNo,tvPatientAge,tvSex,tvSymptom;
-
+        TextView tvName,tvWorkNo;
+        MaterialButton butDetail;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvUser = itemView.findViewById(R.id.tv_user);
-            tvCaseNo = itemView.findViewById(R.id.tv_case_no);
-            tvPatientAge = itemView.findViewById(R.id.tv_patient_age);
-            tvSex=itemView.findViewById(R.id.tv_sex);
-            tvSymptom =  itemView.findViewById(R.id.tv_symptom);
+            tvName = itemView.findViewById(R.id.tv_work_no);
+            tvWorkNo = itemView.findViewById(R.id.tv_name);
+            butDetail = itemView.findViewById(R.id.but_detail);
         }
     }
 

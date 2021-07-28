@@ -219,7 +219,7 @@
                 android:minHeight="55dp"
                 android:text="同意协议并继续"
                 android:textColor="@color/color_tv"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 app:cornerRadius="8dp"
                 app:layout_constraintEnd_toEndOf="@+id/eilLoginPassword"
                 app:layout_constraintStart_toStartOf="@+id/eilLoginPassword"

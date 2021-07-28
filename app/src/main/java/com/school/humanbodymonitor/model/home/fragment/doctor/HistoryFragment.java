@@ -2,13 +2,21 @@ package com.school.humanbodymonitor.model.home.fragment.doctor;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.school.humanbodymonitor.R;
+import com.school.humanbodymonitor.model.home.fragment.adapter.HistoryAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,7 +33,8 @@ public class HistoryFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    private RecyclerView listHistory;
+    private HistoryAdapter adapter;
     public HistoryFragment() {
         // Required empty public constructor
     }
@@ -62,5 +71,21 @@ public class HistoryFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_history, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        initView(view);
+    }
+
+    private void initView(@NonNull View view) {
+        listHistory =  view.findViewById(R.id.list_history);
+        listHistory.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));
+        adapter = new HistoryAdapter();
+        listHistory.setAdapter(adapter);
+        List<String> list = new ArrayList<>();
+        list.add("");
+        adapter.setDeviceList(list);
     }
 }
