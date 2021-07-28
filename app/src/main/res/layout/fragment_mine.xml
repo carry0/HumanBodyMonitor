@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_show_ll"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:gravity="center"
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:textSize="18sp"
+        android:text="个人中心"
+        android:textColor="@android:color/white"
+        android:background="@color/dark_blue_bg"
+        android:layout_height="?android:actionBarSize"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/but_logout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rl_update"
+                style="@style/style_rl"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:id="@+id/tv"
+                    style="@style/style_tv_title"
+                    android:text="用户名\t\t "
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_toStartOf="@+id/iv"
+                    android:layout_toEndOf="@+id/tv"
+                    android:padding="5dp"
+                    android:textColor="@color/dark_blue_bg"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/iv"
+                    style="@style/iv_next_ps_sl"
+                    android:src="@mipmap/icon_next"
+                    tools:ignore="ContentDescription" />
+
+            </RelativeLayout>
+
+            <View style="@style/style_view" />
+
+            <RelativeLayout style="@style/style_rl">
+
+                <TextView
+                    android:id="@+id/tv_7"
+                    style="@style/style_tv_title"
+                    android:text="我的报告" />
+
+
+                <TextView
+                    style="@style/style_text"
+                    android:layout_toEndOf="@+id/tv_7"
+                    android:textColor="@color/dark_blue_bg" />
+
+                <ImageView
+                    android:id="@+id/next_4"
+                    style="@style/iv_next_ps_sl"
+                    android:src="@mipmap/icon_next"
+                    android:visibility="gone"
+                    tools:ignore="ContentDescription" />
+            </RelativeLayout>
+
+            <View style="@style/style_view" />
+
+            <RelativeLayout
+                android:id="@+id/rl_collect"
+                style="@style/style_rl">
+
+                <TextView
+                    android:id="@+id/tv_8"
+                    style="@style/style_tv_title"
+                    android:text="我的收藏" />
+
+                <ImageView
+                    style="@style/iv_next_ps_sl"
+                    android:src="@mipmap/icon_next"
+                    tools:ignore="ContentDescription" />
+            </RelativeLayout>
+
+            <View style="@style/style_view" />
+
+            <RelativeLayout
+                android:id="@+id/rl_customer_service"
+                style="@style/style_rl">
+
+                <TextView
+                    android:id="@+id/tv_9"
+                    style="@style/style_tv_title"
+                    android:text="客服中心" />
+
+
+                <ImageView
+                    style="@style/iv_next_ps_sl"
+                    android:src="@mipmap/icon_next"
+                    tools:ignore="ContentDescription" />
+            </RelativeLayout>
+
+            <View style="@style/style_view" />
+
+            <RelativeLayout
+                android:id="@+id/rl_feedback"
+                style="@style/style_rl">
+
+                <TextView
+                    android:id="@+id/tv_10"
+                    style="@style/style_tv_title"
+                    android:text="服务反馈" />
+
+
+                <ImageView
+                    style="@style/iv_next_ps_sl"
+                    android:src="@mipmap/icon_next"
+                    tools:ignore="ContentDescription" />
+
+            </RelativeLayout>
+
+            <View style="@style/style_view" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/but_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/color_button_enable"
+        android:minHeight="55dp"
+        android:text="退出登录"
+        android:textColor="@color/color_tv"
+        android:textSize="20sp"
+        app:cornerRadius="8dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,12 +2,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:background="@color/bg_show_ll"
     android:layout_height="match_parent">
-
     <com.school.humanbodymonitor.view.StatusBarHeightView
         android:id="@+id/statusBarHeightView"
-        android:layout_width="match_parent"
         android:background="@color/dark_blue_bg"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,13 +25,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/statusBarHeightView"
         app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
-        app:title="注册" />
+        app:title="编辑个人信息" />
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="0dp"
-        android:background="@color/bg_show_ll"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/but_save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbMain">
@@ -53,13 +52,14 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:hint="请输入用户名字"
-                    android:background="@null"
+                    android:id="@+id/et_user_name"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
                     android:layout_toEndOf="@+id/tv"
+                    android:background="@null"
+                    android:hint="请输入用户名字"
                     android:textColor="@color/dark_blue_bg"
                     android:textSize="18sp" />
 
@@ -73,35 +73,15 @@
                     android:text="证件号码" />
 
                 <EditText
+                    android:id="@+id/et_identity_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toEndOf="@+id/tv_2"
                     android:background="@null"
                     android:hint="请输入证件号码"
-                    android:textColor="@color/dark_blue_bg"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_toEndOf="@+id/tv_2" />
-
-            </RelativeLayout>
-
-            <View style="@style/style_view" />
-
-            <RelativeLayout style="@style/style_rl">
-
-                <TextView
-                    android:id="@+id/tv_3"
-                    style="@style/style_tv_title"
-                    android:text="姓名\t\t\t\t " />
-
-                <EditText
-                    android:background="@null"
-                    android:hint="请输入姓名"
-                    android:textColor="@color/dark_blue_bg"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_toEndOf="@+id/tv_3" />
+                    android:textColor="@color/dark_blue_bg" />
 
             </RelativeLayout>
 
@@ -115,14 +95,15 @@
                     android:text="手机号码" />
 
                 <EditText
-                    android:background="@null"
-                    android:hint="请输入手机号码"
-                    android:textColor="@color/dark_blue_bg"
+                    android:id="@+id/et_phone_no"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
-                    android:layout_toEndOf="@+id/tv_4" />
+                    android:layout_toEndOf="@+id/tv_4"
+                    android:background="@null"
+                    android:hint="请输入手机号码"
+                    android:textColor="@color/dark_blue_bg" />
 
             </RelativeLayout>
 
@@ -131,19 +112,72 @@
             <RelativeLayout style="@style/style_rl">
 
                 <TextView
+                    android:id="@+id/tv_7"
+                    style="@style/style_tv_title"
+                    android:text="年龄\t\t\t\t " />
+
+                <EditText
+                    android:id="@+id/et_age"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toEndOf="@+id/tv_7"
+                    android:background="@null"
+                    android:hint="请输入年龄"
+                    android:inputType="number"
+                    android:textColor="@color/dark_blue_bg" />
+
+            </RelativeLayout>
+
+            <View style="@style/style_view" />
+
+            <RelativeLayout style="@style/style_rl">
+
+                <TextView
+                    android:id="@+id/tv_8"
+                    style="@style/style_tv_title"
+                    android:text="性别选择" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/sex_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="15dp"
+                    android:text="男" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/sex_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:layout_toStartOf="@+id/sex_1"
+                    android:text="女" />
+
+            </RelativeLayout>
+
+            <View style="@style/style_view" />
+
+            <RelativeLayout
+                style="@style/style_rl"
+                android:layout_marginTop="10dp">
+
+                <TextView
                     android:id="@+id/tv_5"
                     style="@style/style_tv_title"
                     android:text="登录密码" />
 
                 <EditText
-                    android:background="@null"
-                    android:hint="请输入密码"
-                    android:textColor="@color/dark_blue_bg"
+                    android:id="@+id/et_password"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
-                    android:layout_toEndOf="@+id/tv_5" />
+                    android:layout_toEndOf="@+id/tv_5"
+                    android:background="@null"
+                    android:hint="请输入密码"
+                    android:textColor="@color/dark_blue_bg" />
 
             </RelativeLayout>
 
@@ -157,75 +191,39 @@
                     android:text="确认密码" />
 
                 <EditText
-                    android:background="@null"
-                    android:hint="请输入密码"
-                    android:textColor="@color/dark_blue_bg"
+                    android:id="@+id/et_confirm_password"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
-                    android:layout_toEndOf="@+id/tv_6" />
+                    android:layout_toEndOf="@+id/tv_6"
+                    android:background="@null"
+                    android:hint="请输入密码"
+                    android:textColor="@color/dark_blue_bg" />
 
             </RelativeLayout>
 
             <View style="@style/style_view" />
 
-            <LinearLayout
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
 
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="我同意" />
-
-                <TextView
-                    android:textColor="@color/dark_blue_bg"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="《服务协议》" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="和" />
-
-                <TextView
-                    android:textColor="@color/dark_blue_bg"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="《隐私政策》" />
-            </LinearLayout>
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/login"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="15dp"
-                android:backgroundTint="@color/color_button_enable"
-                android:minHeight="55dp"
-                android:text="同意协议并继续"
-                android:textColor="@color/color_tv"
-                android:textSize="20sp"
-                app:cornerRadius="8dp"
-                app:layout_constraintEnd_toEndOf="@+id/eilLoginPassword"
-                app:layout_constraintStart_toStartOf="@+id/eilLoginPassword"
-                app:layout_constraintTop_toBottomOf="@+id/eilLoginPassword" />
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/but_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/color_button_enable"
+        android:minHeight="55dp"
+        android:text="保存"
+        android:textColor="@color/color_tv"
+        android:textSize="20sp"
+        app:cornerRadius="8dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
