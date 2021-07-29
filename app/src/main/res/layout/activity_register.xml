@@ -115,6 +115,7 @@
                     android:text="手机号码" />
 
                 <EditText
+                    android:inputType="number"
                     android:background="@null"
                     android:hint="请输入手机号码"
                     android:textColor="@color/dark_blue_bg"
@@ -128,7 +129,9 @@
 
             <View style="@style/style_view" />
 
-            <RelativeLayout style="@style/style_rl">
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                style="@style/style_rl">
 
                 <TextView
                     android:id="@+id/tv_5"
@@ -171,50 +174,54 @@
             <View style="@style/style_view" />
 
             <LinearLayout
+                android:id="@+id/ll_select"
+                android:layout_marginEnd="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="10dp"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <CheckBox
+                    android:id="@+id/checkbox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="我同意" />
 
                 <TextView
                     android:textColor="@color/dark_blue_bg"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="《服务协议》" />
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="和" />
 
                 <TextView
                     android:textColor="@color/dark_blue_bg"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="《隐私政策》" />
             </LinearLayout>
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/login"
+                android:onClick="consentListener"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="15dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="16dp"
                 android:backgroundTint="@color/color_button_enable"
                 android:minHeight="55dp"
                 android:text="同意协议并继续"
